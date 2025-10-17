@@ -88,7 +88,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Project Statistics Section */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
           <Card>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-zinc-100">{allProjects.filter(p => p.published).length}</div>
@@ -117,12 +117,6 @@ export default function ProjectsPage() {
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-zinc-100">100%</div>
               <div className="text-xs text-zinc-500">Open Source</div>
-            </div>
-          </Card>
-          <Card>
-            <div className="p-4 text-center">
-              <div className="text-2xl font-bold text-zinc-100">2025</div>
-              <div className="text-xs text-zinc-500">Latest</div>
             </div>
           </Card>
         </div>
