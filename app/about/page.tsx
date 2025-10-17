@@ -373,7 +373,7 @@ export default function AboutPage() {
                         <div className="text-2xl">🥋</div>
                         <div>
                           <div className="text-sm font-medium text-zinc-200">Martial Artist</div>
-                          <div className="text-xs text-zinc-500">9+ months into karate training  — still kicking (literally and figuratively)!</div>
+                          <div className="text-xs text-zinc-500">Red Belt in training  — still kicking (literally and figuratively)!</div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">

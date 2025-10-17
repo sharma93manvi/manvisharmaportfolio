@@ -121,7 +121,7 @@ export default function ProjectsPage() {
           </Card>
           <Card>
             <div className="p-4 text-center">
-              <div className="text-2xl font-bold text-zinc-100">2024</div>
+              <div className="text-2xl font-bold text-zinc-100">2025</div>
               <div className="text-xs text-zinc-500">Latest</div>
             </div>
           </Card>
