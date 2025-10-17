@@ -12,7 +12,7 @@ export default function AboutPage() {
             About Me
           </h1>
           <p className="text-zinc-400 leading-7 md:text-lg">
-            I'm Manvi Sharma — originally from India, now calling Vancouver home for the past four years. Currently pursuing my Master of Business Analytics at UBC Sauder (Class of '26), I bring nearly a decade of experience as a Software Development Engineer in Test at Workday, AWS, IBM, and British Telecom.
+          I'm Manvi Sharma, and I bring nearly a decade of experience as a Software Development Engineer in Test at Workday, AWS, IBM, and British Telecom. Currently pursuing my Master of Business Analytics at UBC Sauder (Class of '26).
           </p>
           <p className="text-zinc-400 leading-7 md:text-lg mt-4">
           After years of building and testing large-scale systems through automation, I became deeply interested in how data, algorithms, and machine learning can drive smarter decisions. That curiosity now fuels my transition into data science and applied ML engineering — where I combine technical depth with analytical thinking to build intelligent, data-driven solutions.
@@ -32,7 +32,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">Senior Software Development Engineer Test</div>
-                        <div className="text-xs text-zinc-500">Workday • Jun 2023 - May 2025</div>
+                        <div className="text-xs text-zinc-500"><span className="text-blue-400 font-semibold">Workday</span> • Jun 2023 - May 2025</div>
                         <div className="text-xs text-zinc-500">Vancouver, BC • Led automation & data validation</div>
                       </div>
                     </div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">QAE II</div>
-                        <div className="text-xs text-zinc-500">Amazon Web Services (AWS) • Aug 2022 - Jun 2023</div>
+                        <div className="text-xs text-zinc-500"><span className="text-orange-400 font-semibold">Amazon Web Services (AWS)</span> • Aug 2022 - Jun 2023</div>
                         <div className="text-xs text-zinc-500">Vancouver, BC • Built automated validation workflows</div>
                       </div>
                     </div>
@@ -48,7 +48,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">QE Analyst</div>
-                        <div className="text-xs text-zinc-500">TD • Jan 2022 - Jul 2022</div>
+                        <div className="text-xs text-zinc-500"><span className="text-green-400 font-semibold">TD</span> • Jan 2022 - Jul 2022</div>
                         <div className="text-xs text-zinc-500">London, Ontario • Quality Engineering</div>
                       </div>
                     </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">Test Professional</div>
-                        <div className="text-xs text-zinc-500">BT (British Telecom) • May 2019 - Dec 2021</div>
+                        <div className="text-xs text-zinc-500"><span className="text-purple-400 font-semibold">BT (British Telecom)</span> • May 2019 - Dec 2021</div>
                         <div className="text-xs text-zinc-500">Bengaluru, India • Test automation & RPA</div>
                       </div>
                     </div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">Senior Technical Services Specialist</div>
-                        <div className="text-xs text-zinc-500">IBM • Dec 2018 - May 2019</div>
+                        <div className="text-xs text-zinc-500"><span className="text-cyan-400 font-semibold">IBM</span> • Dec 2018 - May 2019</div>
                         <div className="text-xs text-zinc-500">Technical services & automation</div>
                       </div>
                     </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">Test Engineer</div>
-                        <div className="text-xs text-zinc-500">Infosys Limited • Feb 2018 - Nov 2018</div>
+                        <div className="text-xs text-zinc-500"><span className="text-red-400 font-semibold">Infosys Limited</span> • Feb 2018 - Nov 2018</div>
                         <div className="text-xs text-zinc-500">Bangalore • Test automation</div>
                       </div>
                     </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                       <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2"></div>
                       <div>
                         <div className="text-sm font-medium text-zinc-200">Project Engineer</div>
-                        <div className="text-xs text-zinc-500">Wipro • Sep 2015 - Feb 2018</div>
+                        <div className="text-xs text-zinc-500"><span className="text-indigo-400 font-semibold">Wipro</span> • Sep 2015 - Feb 2018</div>
                         <div className="text-xs text-zinc-500">Bengaluru, India • Project engineering & testing</div>
                       </div>
                     </div>
