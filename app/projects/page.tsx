@@ -31,12 +31,12 @@ async function getViews(): Promise<Record<string, number>> {
   }
 }
 
-const technologyCategories = [
-  { id: "all", label: "All Projects", count: allProjects.filter(p => p.published).length },
-  { id: "ai", label: "AI & ML", count: allProjects.filter(p => p.published && (p.title.toLowerCase().includes('ai') || p.title.toLowerCase().includes('caption') || p.title.toLowerCase().includes('sentiment'))).length },
-  { id: "web", label: "Web Development", count: allProjects.filter(p => p.published && (p.title.toLowerCase().includes('qr') || p.title.toLowerCase().includes('generator'))).length },
-  { id: "data", label: "Data Science", count: allProjects.filter(p => p.published && (p.title.toLowerCase().includes('analytics') || p.title.toLowerCase().includes('text'))).length },
-];
+  const technologyCategories = [
+    { id: "all", label: "All Projects", count: allProjects.filter(p => p.published).length },
+    { id: "ai", label: "AI & ML", count: allProjects.filter(p => p.published && (p.title.toLowerCase().includes('ai') || p.title.toLowerCase().includes('caption') || p.title.toLowerCase().includes('sentiment'))).length },
+    { id: "web", label: "Web Development", count: allProjects.filter(p => p.published && (p.title.toLowerCase().includes('qr') || p.title.toLowerCase().includes('generator'))).length },
+    { id: "data", label: "Data Science", count: allProjects.filter(p => p.published && (p.title.toLowerCase().includes('analytics') || p.title.toLowerCase().includes('text') || p.title.toLowerCase().includes('exploratory') || p.title.toLowerCase().includes('analysis'))).length },
+  ];
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -67,11 +67,13 @@ export default function ProjectsPage() {
           p.title.toLowerCase().includes('qr') || 
           p.title.toLowerCase().includes('generator')
         );
-      case "data":
-        return baseProjects.filter(p => 
-          p.title.toLowerCase().includes('analytics') || 
-          p.title.toLowerCase().includes('text')
-        );
+          case "data":
+            return baseProjects.filter(p =>
+              p.title.toLowerCase().includes('analytics') ||
+              p.title.toLowerCase().includes('text') ||
+              p.title.toLowerCase().includes('exploratory') ||
+              p.title.toLowerCase().includes('analysis')
+            );
       default:
         return baseProjects;
     }
