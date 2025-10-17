@@ -121,22 +121,6 @@ export default function AboutPage() {
                       <div className="text-2xl mb-1">🎾</div>
                       <div className="text-xs text-zinc-400">Racquet Sports</div>
                     </div>
-                    <div className="text-center p-3 rounded-lg bg-zinc-800/50">
-                      <div className="text-2xl mb-1">✈️</div>
-                      <div className="text-xs text-zinc-400">Traveling</div>
-                    </div>
-                    <div className="text-center p-3 rounded-lg bg-zinc-800/50">
-                      <div className="text-2xl mb-1">📚</div>
-                      <div className="text-xs text-zinc-400">Reading</div>
-                    </div>
-                    <div className="text-center p-3 rounded-lg bg-zinc-800/50">
-                      <div className="text-2xl mb-1">🍳</div>
-                      <div className="text-xs text-zinc-400">Cooking</div>
-                    </div>
-                    <div className="text-center p-3 rounded-lg bg-zinc-800/50">
-                      <div className="text-2xl mb-1">🧘‍♀️</div>
-                      <div className="text-xs text-zinc-400">Meditation</div>
-                    </div>
                   </div>
                 </div>
               </div>
