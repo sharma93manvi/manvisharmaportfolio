@@ -7,12 +7,6 @@ My personal portfolio website, showcasing my journey in data science, AI, and fu
 
 <br/>
 
-## About Me
-
-I'm Manvi Sharma — originally from India, now calling Vancouver home for the past four years. I turn data into clarity and ideas into action. Currently pursuing my Master of Business Analytics at UBC Sauder (Class of '26), I bring nearly a decade of experience as a Software Development Engineer in Test at Workday, AWS, IBM, and British Telecom.
-
-After years of ensuring quality and precision in large-scale systems, I became fascinated by how data drives strategy and decisions. That curiosity is now steering my journey into business analytics and data science.
-
 ## Features
 
 - **Personal Branding**: Custom name, tagline, and metadata
