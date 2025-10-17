@@ -78,18 +78,28 @@ export default function ProjectsPage() {
   };
 
   const filteredProjects = getFilteredProjects();
-  const sorted = filteredProjects
-    .filter(
-      (project) =>
-        project.slug !== featured.slug &&
-        project.slug !== top2.slug &&
-        project.slug !== top3.slug,
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-    );
+  
+  // For "all" category, show featured projects + remaining projects
+  // For other categories, show only filtered projects
+  const sorted = selectedCategory === "all" 
+    ? filteredProjects
+        .filter(
+          (project) =>
+            project.slug !== featured.slug &&
+            project.slug !== top2.slug &&
+            project.slug !== top3.slug,
+        )
+        .sort(
+          (a, b) =>
+            new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+            new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
+        )
+    : filteredProjects
+        .sort(
+          (a, b) =>
+            new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+            new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
+        );
 
   return (
     <div className="relative pb-16">
@@ -166,6 +176,8 @@ export default function ProjectsPage() {
         {/* Debug info */}
         <div className="text-sm text-zinc-500">
           Showing {filteredProjects.length} projects for category: {selectedCategory}
+          <br />
+          Filtered projects: {filteredProjects.map(p => p.title).join(", ")}
         </div>
 
         {selectedCategory === "all" && (
@@ -224,71 +236,36 @@ export default function ProjectsPage() {
           </>
         )}
 
-        {/* Show filtered projects */}
-        {selectedCategory !== "all" && (
-          <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-            <div className="grid grid-cols-1 gap-4">
-              {sorted
-                .filter((_, i) => i % 3 === 0)
-                .map((project) => (
-                  <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
-                  </Card>
-                ))}
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {sorted
-                .filter((_, i) => i % 3 === 1)
-                .map((project) => (
-                  <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
-                  </Card>
-                ))}
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {sorted
-                .filter((_, i) => i % 3 === 2)
-                .map((project) => (
-                  <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
-                  </Card>
-                ))}
-            </div>
+        {/* Show all projects in a simple grid */}
+        <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4">
+            {sorted
+              .filter((_, i) => i % 3 === 0)
+              .map((project) => (
+                <Card key={project.slug}>
+                  <Article project={project} views={views[project.slug] ?? 0} />
+                </Card>
+              ))}
           </div>
-        )}
-
-        {/* Show remaining projects when "All Projects" is selected */}
-        {selectedCategory === "all" && (
-          <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-            <div className="grid grid-cols-1 gap-4">
-              {sorted
-                .filter((_, i) => i % 3 === 0)
-                .map((project) => (
-                  <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
-                  </Card>
-                ))}
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {sorted
-                .filter((_, i) => i % 3 === 1)
-                .map((project) => (
-                  <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
-                  </Card>
-                ))}
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {sorted
-                .filter((_, i) => i % 3 === 2)
-                .map((project) => (
-                  <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
-                  </Card>
-                ))}
-            </div>
+          <div className="grid grid-cols-1 gap-4">
+            {sorted
+              .filter((_, i) => i % 3 === 1)
+              .map((project) => (
+                <Card key={project.slug}>
+                  <Article project={project} views={views[project.slug] ?? 0} />
+                </Card>
+              ))}
           </div>
-        )}
+          <div className="grid grid-cols-1 gap-4">
+            {sorted
+              .filter((_, i) => i % 3 === 2)
+              .map((project) => (
+                <Card key={project.slug}>
+                  <Article project={project} views={views[project.slug] ?? 0} />
+                </Card>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );
