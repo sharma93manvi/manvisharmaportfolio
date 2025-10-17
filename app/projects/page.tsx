@@ -192,9 +192,11 @@ export default function ProjectsPage() {
                       <div className="text-xs text-zinc-100">
                         {featured.date ? (
                           <time dateTime={new Date(featured.date).toISOString()}>
-                            {Intl.DateTimeFormat(undefined, {
-                              dateStyle: "medium",
-                            }).format(new Date(featured.date))}
+                            {new Date(featured.date).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'short',
+                              day: 'numeric'
+                            })}
                           </time>
                         ) : (
                           <span>SOON</span>
