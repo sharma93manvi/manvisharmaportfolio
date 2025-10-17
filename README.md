@@ -47,13 +47,6 @@ npm run dev
 
 The site will be available at `http://localhost:3000`
 
-## Projects Featured
-
-- **PhotoCaption-AI**: AI-powered web app for Instagram-ready captions
-- **Text Analytics 10K**: Data analysis and visualization project
-- **YouTube Sentiment Analysis**: Machine learning sentiment analysis
-- **QR Code Generator**: Full-stack QR code generation tool
-
 ## Contact
 
 - **Email**: sharma93manvi@gmail.com
