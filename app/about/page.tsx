@@ -31,57 +31,64 @@ export default function AboutPage() {
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">Senior Software Development Engineer Test</div>
-                        <div className="text-xs text-zinc-500"><span className="text-blue-400 font-semibold">Workday</span> • Jun 2023 - May 2025</div>
-                        <div className="text-xs text-zinc-500">Vancouver, BC • Led automation & data validation</div>
+                        <div className="text-sm font-medium text-zinc-200">Workday</div>
+                        <div className="text-xs text-zinc-400">Senior Software Development Engineer Test</div>
+                        <div className="text-xs text-zinc-500">Jun 2023 - May 2025 • Vancouver, BC</div>
+                        <div className="text-xs text-zinc-500">Led automation & data validation</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">QAE II</div>
-                        <div className="text-xs text-zinc-500"><span className="text-orange-400 font-semibold">Amazon Web Services (AWS)</span> • Aug 2022 - Jun 2023</div>
-                        <div className="text-xs text-zinc-500">Vancouver, BC • Built automated validation workflows</div>
+                        <div className="text-sm font-medium text-zinc-200">Amazon Web Services (AWS)</div>
+                        <div className="text-xs text-zinc-400">QAE II</div>
+                        <div className="text-xs text-zinc-500">Aug 2022 - Jun 2023 • Vancouver, BC</div>
+                        <div className="text-xs text-zinc-500">Built automated validation workflows</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">QE Analyst</div>
-                        <div className="text-xs text-zinc-500"><span className="text-green-400 font-semibold">TD</span> • Jan 2022 - Jul 2022</div>
-                        <div className="text-xs text-zinc-500">London, Ontario • Quality Engineering</div>
+                        <div className="text-sm font-medium text-zinc-200">TD</div>
+                        <div className="text-xs text-zinc-400">QE Analyst</div>
+                        <div className="text-xs text-zinc-500">Jan 2022 - Jul 2022 • London, Ontario</div>
+                        <div className="text-xs text-zinc-500">Quality Engineering</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">Test Professional</div>
-                        <div className="text-xs text-zinc-500"><span className="text-purple-400 font-semibold">BT (British Telecom)</span> • May 2019 - Dec 2021</div>
-                        <div className="text-xs text-zinc-500">Bengaluru, India • Test automation & RPA</div>
+                        <div className="text-sm font-medium text-zinc-200">BT (British Telecom)</div>
+                        <div className="text-xs text-zinc-400">Test Professional</div>
+                        <div className="text-xs text-zinc-500">May 2019 - Dec 2021 • Bengaluru, India</div>
+                        <div className="text-xs text-zinc-500">Test automation & RPA</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">Senior Technical Services Specialist</div>
-                        <div className="text-xs text-zinc-500"><span className="text-cyan-400 font-semibold">IBM</span> • Dec 2018 - May 2019</div>
+                        <div className="text-sm font-medium text-zinc-200">IBM</div>
+                        <div className="text-xs text-zinc-400">Senior Technical Services Specialist</div>
+                        <div className="text-xs text-zinc-500">Dec 2018 - May 2019</div>
                         <div className="text-xs text-zinc-500">Technical services & automation</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">Test Engineer</div>
-                        <div className="text-xs text-zinc-500"><span className="text-red-400 font-semibold">Infosys Limited</span> • Feb 2018 - Nov 2018</div>
-                        <div className="text-xs text-zinc-500">Bangalore • Test automation</div>
+                        <div className="text-sm font-medium text-zinc-200">Infosys Limited</div>
+                        <div className="text-xs text-zinc-400">Test Engineer</div>
+                        <div className="text-xs text-zinc-500">Feb 2018 - Nov 2018 • Bangalore</div>
+                        <div className="text-xs text-zinc-500">Test automation</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2"></div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-200">Project Engineer</div>
-                        <div className="text-xs text-zinc-500"><span className="text-indigo-400 font-semibold">Wipro</span> • Sep 2015 - Feb 2018</div>
-                        <div className="text-xs text-zinc-500">Bengaluru, India • Project engineering & testing</div>
+                        <div className="text-sm font-medium text-zinc-200">Wipro</div>
+                        <div className="text-xs text-zinc-400">Project Engineer</div>
+                        <div className="text-xs text-zinc-500">Sep 2015 - Feb 2018 • Bengaluru, India</div>
+                        <div className="text-xs text-zinc-500">Project engineering & testing</div>
                       </div>
                     </div>
                   </div>
