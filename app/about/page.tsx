@@ -123,52 +123,48 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
+                
+                <div>
+                  <h3 className="text-lg font-medium text-zinc-200 mb-3">Fun Facts About Me</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="text-2xl">📸</div>
+                        <div>
+                          <div className="text-sm font-medium text-zinc-200">Creative Entrepreneur</div>
+                          <div className="text-xs text-zinc-500">Built my Vancouver based Photography brand. Completed 70+ photo projects, including Vancouver Fashion Week.</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="text-2xl">☕</div>
+                        <div>
+                          <div className="text-sm font-medium text-zinc-200">Home Barista</div>
+                          <div className="text-xs text-zinc-500">Can't start the day without a perfect cup of coffee</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="text-2xl">🥋</div>
+                        <div>
+                          <div className="text-sm font-medium text-zinc-200">Martial Artist</div>
+                          <div className="text-xs text-zinc-500">Red Belt in training — still kicking (literally and figuratively)!</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="text-2xl">🎯</div>
+                        <div>
+                          <div className="text-sm font-medium text-zinc-200">Lifelong Learner</div>
+                          <div className="text-xs text-zinc-500">Always learning & evolving — building on ten years in tech to explore analytics and machine learning.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </Card>
 
-          {/* Fun Facts */}
-          <Card>
-            <div className="p-6 md:p-10 space-y-6">
-              <h2 className="text-xl md:text-2xl font-semibold text-zinc-100">
-                Fun Facts About Me
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">📸</div>
-                    <div>
-                      <div className="text-sm font-medium text-zinc-200">Creative Entrepreneur</div>
-                      <div className="text-xs text-zinc-500"> Built my Vancouver based Photography brand. Completed 70+ photo projects, including Vancouver Fashion Week.</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">☕</div>
-                    <div>
-                      <div className="text-sm font-medium text-zinc-200">Home Barista</div>
-                      <div className="text-xs text-zinc-500">Can't start the day without a perfect cup of coffee</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🥋</div>
-                    <div>
-                      <div className="text-sm font-medium text-zinc-200">Martial Artist</div>
-                      <div className="text-xs text-zinc-500">Red Belt in training  — still kicking (literally and figuratively)!</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🎯</div>
-                    <div>
-                      <div className="text-sm font-medium text-zinc-200">Lifelong Learner</div>
-                      <div className="text-xs text-zinc-500">Always learning & evolving — building on ten years in tech to explore analytics and machine learning.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card>
 
           {/* Skills Visualization */}
           <Card>
