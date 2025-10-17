@@ -1,33 +1,65 @@
 <div align="center">
-    <a href="https://chronark.com"><h1 align="center">chronark.com</h1></a>
+    <a href="https://github.com/sharma93manvi/manvisharmaportfolio"><h1 align="center">Manvi Sharma Portfolio</h1></a>
 
-My personal website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Upstash](https://upstash.com?ref=chronark.com), [Contentlayer](https://www.contentlayer.dev/) and deployed to [Vercel](https://vercel.com/).
+My personal portfolio website, showcasing my journey in data science, AI, and full-stack development. Built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Contentlayer](https://www.contentlayer.dev/).
 
 </div>
 
 <br/>
 
+## About Me
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/upstash/clone?demo-title=Next.js%20Portfolio%20with%20Pageview%20Counter&demo-description=Portfolio%20site%20with%20pageview%20counter%2C%20built%20with%20Next.js%2013%20App%20Router%2C%20Contentlayer%2C%20and%20Upstash%20Redis.&demo-url=https%3A%2F%2Fchronark.com%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1DA8n5a6WaP9p1FXf9LmUY%2Fc6264fa2732355787bf657df92dda8a1%2FCleanShot_2023-04-17_at_14.17.37.png&project-name=Next.js%20Portfolio%20with%20Pageview%20Counter&repository-name=nextjs-portfolio-pageview-counter&repository-url=https%3A%2F%2Fgithub.com%2Fchronark%2Fchronark.com&from=templates&integration-ids=oac_V3R1GIpkoJorr6fqyiwdhl17)
+I'm Manvi Sharma — originally from India, now calling Vancouver home for the past four years. I turn data into clarity and ideas into action. Currently pursuing my Master of Business Analytics at UBC Sauder (Class of '26), I bring nearly a decade of experience as a Software Development Engineer in Test at Workday, AWS, IBM, and British Telecom.
+
+After years of ensuring quality and precision in large-scale systems, I became fascinated by how data drives strategy and decisions. That curiosity is now steering my journey into business analytics and data science.
+
+## Features
+
+- **Personal Branding**: Custom name, tagline, and metadata
+- **About Page**: Comprehensive personal information with professional background
+- **Projects Showcase**: Personal data science and AI projects
+- **Skills Visualization**: Interactive progress bars and technology stack
+- **Education & Certifications**: Academic achievements and professional certifications
+- **Personal Interests**: Hobbies and fun facts
+- **Responsive Design**: Modern UI with Tailwind CSS
+- **Fast Performance**: Built with Next.js 13 App Router
+
+## Tech Stack
+
+- **Framework**: Next.js 13 with App Router
+- **Styling**: Tailwind CSS
+- **Content**: Contentlayer for MDX content management
+- **Deployment**: Vercel (recommended)
+- **Analytics**: Optional Upstash Redis integration
 
 ## Running Locally
 
-
 ```sh-session
-git clone https://github.com/chronark/chronark.com.git
-cd chronark.com
+git clone https://github.com/sharma93manvi/manvisharmaportfolio.git
+cd manvisharmaportfolio
 ```
 
-
-Create a `.env` file similar to [`.env.example`](https://github.com/chronark/chronark.com/blob/main/.env.example).
-
-Then install dependencies and run the development server:
+Install dependencies and run the development server:
 ```sh-session
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
+The site will be available at `http://localhost:3000`
 
-## Cloning / Forking
+## Projects Featured
 
-Please remove all of my personal information (projects, images, etc.) before deploying your own version of this site.
+- **PhotoCaption-AI**: AI-powered web app for Instagram-ready captions
+- **Text Analytics 10K**: Data analysis and visualization project
+- **YouTube Sentiment Analysis**: Machine learning sentiment analysis
+- **QR Code Generator**: Full-stack QR code generation tool
+
+## Contact
+
+- **Email**: sharma93manvi@gmail.com
+- **LinkedIn**: [manvi-sharma1](https://www.linkedin.com/in/manvi-sharma1/)
+- **GitHub**: [sharma93manvi](https://github.com/sharma93manvi)
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
