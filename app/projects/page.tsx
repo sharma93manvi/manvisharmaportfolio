@@ -5,31 +5,6 @@ import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
-import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
-
-async function getViews(): Promise<Record<string, number>> {
-  const hasRedisEnv =
-    !!process.env.UPSTASH_REDIS_REST_URL &&
-    !!process.env.UPSTASH_REDIS_REST_TOKEN;
-
-  if (!hasRedisEnv) {
-    return {};
-  }
-
-  try {
-    const redis = Redis.fromEnv();
-    const result = await redis.mget<number[]>(
-      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
-    );
-    return result.reduce((acc, v, i) => {
-      acc[allProjects[i].slug] = v ?? 0;
-      return acc;
-    }, {} as Record<string, number>);
-  } catch {
-    return {};
-  }
-}
 
   const technologyCategories = [
     { id: "all", label: "All Projects", count: allProjects.filter(p => p.published).length },
@@ -40,12 +15,6 @@ async function getViews(): Promise<Record<string, number>> {
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [views, setViews] = useState<Record<string, number>>({});
-
-  // Load views on component mount
-  React.useEffect(() => {
-    getViews().then(setViews);
-  }, []);
 
   const featured = allProjects.find((project) => project.slug === "photo-caption-ai")!;
   const top2 = allProjects.find((project) => project.slug === "text-analytics-10k")!;
@@ -188,27 +157,6 @@ export default function ProjectsPage() {
               <Card>
                 <Link href={`/projects/${featured.slug}`}>
                   <article className="relative w-full h-full p-4 md:p-8">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="text-xs text-zinc-100">
-                        {featured.date ? (
-                          <time dateTime={new Date(featured.date).toISOString()}>
-                            {new Date(featured.date).toLocaleDateString('en-US', {
-                              year: 'numeric',
-                              month: 'short',
-                              day: 'numeric'
-                            })}
-                          </time>
-                        ) : (
-                          <span>SOON</span>
-                        )}
-                      </div>
-                      <span className="flex items-center gap-1 text-xs text-zinc-500">
-                        <Eye className="w-4 h-4" />{" "}
-                        {Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                          views[featured.slug] ?? 0,
-                        )}
-                      </span>
-                    </div>
 
                     <h2
                       id="featured-post"
@@ -231,7 +179,7 @@ export default function ProjectsPage() {
               <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
                 {[top2, top3].map((project) => (
                   <Card key={project.slug}>
-                    <Article project={project} views={views[project.slug] ?? 0} />
+                      <Article project={project} />
                   </Card>
                 ))}
               </div>
@@ -247,7 +195,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
+                      <Article project={project} />
                 </Card>
               ))}
           </div>
@@ -256,7 +204,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 1)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
+                      <Article project={project} />
                 </Card>
               ))}
           </div>
@@ -265,7 +213,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 2)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
+                      <Article project={project} />
                 </Card>
               ))}
           </div>
