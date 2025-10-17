@@ -83,7 +83,7 @@ export default function ProjectsPage() {
             Projects
           </h2>
           <p className="mt-4 text-zinc-400">
-            Showcasing my work in data science, AI, and full-stack development.
+            Showcasing my work across data science, AI/ML, and analytics.
           </p>
         </div>
 

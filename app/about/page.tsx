@@ -110,8 +110,8 @@ export default function AboutPage() {
                       <div className="text-xs text-zinc-400">Painting</div>
                     </div>
                     <div className="text-center p-3 rounded-lg bg-zinc-800/50">
-                      <div className="text-2xl mb-1">🥋</div>
-                      <div className="text-xs text-zinc-400">Karate</div>
+                      <div className="text-2xl mb-1">🎧</div>
+                      <div className="text-xs text-zinc-400">Podcasts & Learning</div>
                     </div>
                     <div className="text-center p-3 rounded-lg bg-zinc-800/50">
                       <div className="text-2xl mb-1">🏔️</div>
@@ -122,45 +122,47 @@ export default function AboutPage() {
                       <div className="text-xs text-zinc-400">Racquet Sports</div>
                     </div>
                   </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-lg font-medium text-zinc-200 mb-3">Fun Facts About Me</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <div className="text-2xl">📸</div>
-                        <div>
-                          <div className="text-sm font-medium text-zinc-200">Creative Entrepreneur</div>
-                          <div className="text-xs text-zinc-500">Built my Vancouver based Photography brand. Completed 70+ photo projects, including Vancouver Fashion Week.</div>
+                  
+                  <div className="mt-6">
+                    <h3 className="text-lg font-medium text-zinc-200 mb-3">Fun Facts About Me</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-3">
+                        <div className="flex items-start space-x-3">
+                          <div className="text-2xl">📸</div>
+                          <div>
+                            <div className="text-sm font-medium text-zinc-200">Creative Entrepreneur</div>
+                            <div className="text-xs text-zinc-500">Founder of HappyHungryHues, my photography brand. Captured 70+ projects-from weddings to Vancouver Fashion Week.</div>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="text-2xl">☕</div>
+                          <div>
+                            <div className="text-sm font-medium text-zinc-200">Home Barista</div>
+                            <div className="text-xs text-zinc-500">Mornings start with latte art experiments and a perfectly dialed-in espresso shot.</div>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-start space-x-3">
-                        <div className="text-2xl">☕</div>
-                        <div>
-                          <div className="text-sm font-medium text-zinc-200">Home Barista</div>
-                          <div className="text-xs text-zinc-500">Can't start the day without a perfect cup of coffee</div>
+                      <div className="space-y-3">
+                        <div className="flex items-start space-x-3">
+                          <div className="text-2xl">🥋</div>
+                          <div>
+                            <div className="text-sm font-medium text-zinc-200">Martial Artist</div>
+                            <div className="text-xs text-zinc-500">Red belt in Karate, training toward green. I've learned that strength, patience, and persistence matter as much outside the dojo as within it.</div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <div className="text-2xl">🥋</div>
-                        <div>
-                          <div className="text-sm font-medium text-zinc-200">Martial Artist</div>
-                          <div className="text-xs text-zinc-500">Red Belt in training — still kicking (literally and figuratively)!</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <div className="text-2xl">🎯</div>
-                        <div>
-                          <div className="text-sm font-medium text-zinc-200">Lifelong Learner</div>
-                          <div className="text-xs text-zinc-500">Always learning & evolving — building on ten years in tech to explore analytics and machine learning.</div>
+                        
+                        <div className="flex items-start space-x-3">
+                          <div className="text-2xl">🎓</div>
+                          <div>
+                            <div className="text-sm font-medium text-zinc-200">Lifelong Learner</div>
+                            <div className="text-xs text-zinc-500">Always learning & evolving — building on ten years in tech to explore data science and machine learning.</div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                
               </div>
             </div>
           </Card>
@@ -196,18 +198,27 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <div className="flex justify-between text-sm text-zinc-400 mb-1">
-                        <span>Statistical Analysis & A/B Testing</span>
+                        <span>Statistical Modeling & Experimentation</span>
                         <span>88%</span>
                       </div>
                       <div className="w-full bg-zinc-800 rounded-full h-2">
                         <div className="bg-purple-500 h-2 rounded-full" style={{width: '88%'}}></div>
                       </div>
                     </div>
+                    <div>
+                      <div className="flex justify-between text-sm text-zinc-400 mb-1">
+                        <span>Feature Engineering & Data Pipelines</span>
+                        <span>85%</span>
+                      </div>
+                      <div className="w-full bg-zinc-800 rounded-full h-2">
+                        <div className="bg-cyan-500 h-2 rounded-full" style={{width: '85%'}}></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-medium text-zinc-200">Development & Tools</h3>
+                  <h3 className="text-lg font-medium text-zinc-200">Engineering & Tools</h3>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between text-sm text-zinc-400 mb-1">
@@ -229,11 +240,20 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <div className="flex justify-between text-sm text-zinc-400 mb-1">
-                        <span>Tableau & Data Visualization</span>
+                        <span>Data Visualization (Tableau, Matplotlib, Seaborn)</span>
                         <span>80%</span>
                       </div>
                       <div className="w-full bg-zinc-800 rounded-full h-2">
                         <div className="bg-red-500 h-2 rounded-full" style={{width: '80%'}}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-sm text-zinc-400 mb-1">
+                        <span>ML Deployment (Streamlit, FastAPI)</span>
+                        <span>78%</span>
+                      </div>
+                      <div className="w-full bg-zinc-800 rounded-full h-2">
+                        <div className="bg-teal-500 h-2 rounded-full" style={{width: '78%'}}></div>
                       </div>
                     </div>
                   </div>
@@ -250,20 +270,20 @@ export default function AboutPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">4</div>
+                  <div className="text-3xl font-bold text-blue-400">5</div>
                   <div className="text-sm text-zinc-400">Active Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">3</div>
+                  <div className="text-3xl font-bold text-green-400">4</div>
                   <div className="text-sm text-zinc-400">AI/ML Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400">2</div>
+                  <div className="text-3xl font-bold text-purple-400">1</div>
                   <div className="text-sm text-zinc-400">Web Apps</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-orange-400">1</div>
-                  <div className="text-sm text-zinc-400">Analytics Tool</div>
+                  <div className="text-sm text-zinc-400">Data Science</div>
                 </div>
               </div>
             </div>
@@ -278,14 +298,14 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[
                   { name: "Python", category: "Data Science", color: "bg-blue-500" },
-                  { name: "JavaScript", category: "Web Dev", color: "bg-yellow-500" },
-                  { name: "Java", category: "Backend", color: "bg-green-500" },
+                  { name: "PyTorch / TensorFlow", category: "Deep Learning", color: "bg-green-500" },
                   { name: "SQL", category: "Database", color: "bg-red-500" },
-                  { name: "AWS", category: "Cloud", color: "bg-purple-500" },
-                  { name: "Tableau", category: "Analytics", color: "bg-pink-500" },
-                  { name: "R", category: "Statistics", color: "bg-orange-500" },
-                  { name: "Matlab", category: "Analysis", color: "bg-cyan-500" },
+                  { name: "AWS", category: "Cloud & Deployment", color: "bg-purple-500" },
+                  { name: "JavaScript", category: "Web Dev", color: "bg-yellow-500" },
+                  { name: "Tableau / Power BI", category: "Analytics", color: "bg-pink-500" },
                   { name: "Streamlit", category: "AI Apps", color: "bg-indigo-500" },
+                  { name: "Docker / APIs", category: "Deployment", color: "bg-cyan-500" },
+                  { name: "Git / GitHub", category: "Version Control", color: "bg-gray-500" },
                 ].map((tech, index) => (
                   <div key={index} className="flex items-center space-x-3 p-3 rounded-lg bg-zinc-800/50">
                     <div className={`w-3 h-3 rounded-full ${tech.color}`}></div>
@@ -357,15 +377,15 @@ export default function AboutPage() {
                       <h3 className="text-lg font-medium text-zinc-200 mb-3">Current Focus</h3>
                       <ul className="space-y-2 text-zinc-400">
                         <li>• MBAN program completion</li>
-                        <li>• Business analytics mastery</li>
+                        <li>• Mastering Data Science & Machine Learning</li>
                         <li>• Data-driven decision making</li>
-                        <li>• Transitioning from QA to Data Science</li>
+                        <li>• Applying data science & AI to real problems</li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="text-lg font-medium text-zinc-200 mb-3">Career Goals</h3>
                       <ul className="space-y-2 text-zinc-400">
-                        <li>• Data Science & Analytics roles</li>
+                        <li>• ML Engineer & Data Science roles</li>
                         <li>• Strategic business insights</li>
                         <li>• Combining tech + business acumen</li>
                         <li>• Leading data-driven initiatives</li>
