@@ -6,10 +6,10 @@ import { Card } from "../components/card";
 
 const socials = [
 	{
-		icon: <Mail size={20} />,
-		href: "mailto:sharma93manvi@gmail.com",
-		label: "Email",
-		handle: "sharma93manvi@gmail.com",
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/manvi-sharma1/",
+		label: "LinkedIn",
+		handle: "manvi-sharma1",
 	},
 	{
 		icon: <Github size={20} />,
@@ -18,10 +18,10 @@ const socials = [
 		handle: "sharma93manvi",
 	},
 	{
-		icon: <Linkedin size={20} />,
-		href: "https://www.linkedin.com/in/manvi-sharma1/",
-		label: "LinkedIn",
-		handle: "manvi-sharma1",
+		icon: <Mail size={20} />,
+		href: "mailto:sharma93manvi@gmail.com",
+		label: "Email",
+		handle: "sharma93manvi@gmail.com",
 	},
 ];
 

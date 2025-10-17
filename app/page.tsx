@@ -17,7 +17,7 @@ export default function Home() {
             href="/about"
             className="text-base md:text-lg duration-500 text-zinc-500 hover:text-zinc-300"
           >
-            About
+            About Me
           </Link>
           {navigation.map((item) => (
             <Link
