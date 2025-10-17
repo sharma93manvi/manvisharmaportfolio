@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "Manvi Sharma",
+    template: "%s | Manvi Sharma",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Portfolio of Manvi Sharma - Transforming data into insights, and insights into experiences",
   openGraph: {
-    title: "chronark.com",
+    title: "Manvi Sharma",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+      "Portfolio of Manvi Sharma - Transforming data into insights, and insights into experiences",
+    url: "https://manvisharma.dev",
+    siteName: "Manvi Sharma",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://manvisharma.dev/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "Manvi Sharma",
     card: "summary_large_image",
   },
   icons: {

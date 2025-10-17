@@ -7,22 +7,36 @@ import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
 
-const redis = Redis.fromEnv();
+async function getViews(): Promise<Record<string, number>> {
+  const hasRedisEnv =
+    !!process.env.UPSTASH_REDIS_REST_URL &&
+    !!process.env.UPSTASH_REDIS_REST_TOKEN;
+
+  if (!hasRedisEnv) {
+    return {};
+  }
+
+  try {
+    const redis = Redis.fromEnv();
+    const result = await redis.mget<number[]>(
+      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
+    );
+    return result.reduce((acc, v, i) => {
+      acc[allProjects[i].slug] = v ?? 0;
+      return acc;
+    }, {} as Record<string, number>);
+  } catch {
+    return {};
+  }
+}
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-  const views = (
-    await redis.mget<number[]>(
-      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
-    )
-  ).reduce((acc, v, i) => {
-    acc[allProjects[i].slug] = v ?? 0;
-    return acc;
-  }, {} as Record<string, number>);
+  const views = await getViews();
 
-  const featured = allProjects.find((project) => project.slug === "unkey")!;
-  const top2 = allProjects.find((project) => project.slug === "planetfall")!;
-  const top3 = allProjects.find((project) => project.slug === "highstorm")!;
+  const featured = allProjects.find((project) => project.slug === "photo-caption-ai")!;
+  const top2 = allProjects.find((project) => project.slug === "text-analytics-10k")!;
+  const top3 = allProjects.find((project) => project.slug === "youtube-sentiment-analysis")!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
@@ -46,7 +60,7 @@ export default async function ProjectsPage() {
             Projects
           </h2>
           <p className="mt-4 text-zinc-400">
-            Some of the projects are from work and some are on my own time.
+            Showcasing my work in data science, AI, and full-stack development.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
