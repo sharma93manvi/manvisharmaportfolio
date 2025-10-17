@@ -3,6 +3,8 @@
 
 My personal portfolio website, showcasing my journey in data science, AI, and full-stack development. Built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Contentlayer](https://www.contentlayer.dev/).
 
+🌐 **Live Site**: [https://themanvisharma.com](https://themanvisharma.com)
+
 </div>
 
 <br/>
