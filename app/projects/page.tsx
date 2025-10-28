@@ -18,7 +18,7 @@ export default function ProjectsPage() {
 
   const featured = allProjects.find((project) => project.slug === "photo-caption-ai")!;
   const top2 = allProjects.find((project) => project.slug === "text-analytics-10k")!;
-  const top3 = allProjects.find((project) => project.slug === "youtube-sentiment-analysis")!;
+  const top3 = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence")!;
   
   // Filter projects based on selected category
   const getFilteredProjects = () => {
