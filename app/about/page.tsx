@@ -270,7 +270,7 @@ export default function AboutPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">5</div>
+                  <div className="text-3xl font-bold text-blue-400">7</div>
                   <div className="text-sm text-zinc-400">Active Projects</div>
                 </div>
                 <div className="text-center">
@@ -282,7 +282,7 @@ export default function AboutPage() {
                   <div className="text-sm text-zinc-400">Web Apps</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-400">1</div>
+                  <div className="text-3xl font-bold text-orange-400">2</div>
                   <div className="text-sm text-zinc-400">Data Science</div>
                 </div>
               </div>
