@@ -16,9 +16,9 @@ import { Article } from "./article";
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const featured = allProjects.find((project) => project.slug === "photo-caption-ai")!;
-  const top2 = allProjects.find((project) => project.slug === "text-analytics-10k")!;
-  const top3 = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence")!;
+  const featured = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence")!;
+  const top2 = allProjects.find((project) => project.slug === "photo-caption-ai")!;
+  const top3 = allProjects.find((project) => project.slug === "text-analytics-10k")!;
   
   // Filter projects based on selected category
   const getFilteredProjects = () => {
