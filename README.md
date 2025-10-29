@@ -26,7 +26,7 @@ My personal portfolio website, showcasing my journey in data science, AI, and fu
 - **Styling**: Tailwind CSS
 - **Content**: Contentlayer for MDX content management
 - **Deployment**: Vercel (recommended)
-- **Analytics**: Google Analytics (GA4) and Beam Analytics integration
+- **Analytics**: Vercel Analytics integration
 
 ## Running Locally
 
@@ -45,24 +45,11 @@ The site will be available at `http://localhost:3000`
 
 ## Analytics Setup
 
-### Google Analytics (GA4)
-1. Create a Google Analytics account at [analytics.google.com](https://analytics.google.com/)
-2. Create a new GA4 property for your website
-3. Get your Measurement ID (format: `G-XXXXXXXXXX`)
-4. Create a `.env.local` file in the root directory:
-   ```env
-   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-   ```
-5. Deploy your site - Google Analytics will automatically start tracking
-
-### Beam Analytics (Optional)
-If you want to use Beam Analytics alongside Google Analytics:
-1. Sign up at [beamanalytics.com](https://beamanalytics.com/)
-2. Get your Beam token
-3. Add it to your `.env.local` file:
-   ```env
-   NEXT_PUBLIC_BEAM_TOKEN=your_beam_token_here
-   ```
+### Vercel Analytics
+Vercel Analytics is automatically enabled and requires no additional setup:
+1. Analytics data will appear in your Vercel dashboard
+2. Visit your deployed site to start collecting data
+3. Check the Analytics tab in your Vercel project dashboard
 
 ## Contact
 
