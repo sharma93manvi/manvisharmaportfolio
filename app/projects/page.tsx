@@ -16,9 +16,9 @@ import { Article } from "./article";
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const featured = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence")!;
-  const top2 = allProjects.find((project) => project.slug === "photo-caption-ai")!;
-  const top3 = allProjects.find((project) => project.slug === "text-analytics-10k")!;
+  const featured = allProjects.find((project) => project.slug === "youtube-sentiment-analysis");
+  const top2 = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence");
+  const top3 = allProjects.find((project) => project.slug === "photo-caption-ai");
   
   // Filter projects based on selected category
   const getFilteredProjects = () => {
@@ -58,9 +58,9 @@ export default function ProjectsPage() {
     ? filteredProjects
         .filter(
           (project) =>
-            project.slug !== featured.slug &&
-            project.slug !== top2.slug &&
-            project.slug !== top3.slug,
+            featured && project.slug !== featured.slug &&
+            top2 && project.slug !== top2.slug &&
+            top3 && project.slug !== top3.slug,
         )
         .sort(
           (a, b) =>
@@ -147,7 +147,7 @@ export default function ProjectsPage() {
           Filtered projects: {filteredProjects.map(p => p.title).join(", ")}
         </div>
 
-        {selectedCategory === "all" && (
+        {selectedCategory === "all" && featured && top2 && top3 && (
           <>
             <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
               <Card>
@@ -173,7 +173,7 @@ export default function ProjectsPage() {
               </Card>
 
               <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-                {[top2, top3].map((project) => (
+                {[top2, top3].filter(Boolean).map((project) => (
                   <Card key={project.slug}>
                       <Article project={project} />
                   </Card>

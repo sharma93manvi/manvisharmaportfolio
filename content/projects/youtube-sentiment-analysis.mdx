@@ -1,39 +1,63 @@
 ---
-title: YouTube Sentiment Analysis
-description: Real-time sentiment analysis of YouTube comments for trending videos or specific channels. This project fetches comments using the YouTube Data API, preprocesses text using NLP techniques, and classifies sentiment.
+title: YouTube Sentiment Intelligence Dashboard
+description: Real-time sentiment analysis dashboard that analyzes YouTube video comments using NLTK VADER sentiment analysis. Analyze trending videos or any YouTube video by pasting a link!
 date: "2024-01-20"
 published: true
 repository: sharma93manvi/youtube-sentiment-analysis
+url: https://youtube-sentiment-intelligence-dashboard.streamlit.app/
 ---
 
-Real-time sentiment analysis of YouTube comments for trending videos or specific channels. This project fetches comments using the YouTube Data API, preprocesses text using NLP techniques, and classifies sentiment.
-
-An advanced sentiment analysis system that provides insights into public opinion and engagement patterns on YouTube content.
+A real-time sentiment analysis dashboard that analyzes YouTube video comments using NLTK VADER sentiment analysis. Analyze trending videos or any YouTube video by pasting a link!
 
 ## Key Features
 
-- **Real-time comment fetching** from YouTube Data API
-- **Advanced text preprocessing** and cleaning
-- **Sentiment classification** (positive, negative, neutral)
-- **Trending video analysis**
-- **Channel-specific sentiment tracking**
-- **Data visualization** and reporting
+### Core Features
+- **Trending Videos Analysis**: Fetches and analyzes top trending videos in your selected region (default: Canada)
+- **Custom Video Analysis**: Paste any YouTube video link to get instant sentiment analysis
+- **Real-time Sentiment Analysis**: Uses NLTK VADER to analyze comment sentiment
+- **Interactive Dashboard**: Beautiful Streamlit-based web interface with comprehensive metrics
+- **24-Hour Trend Visualization**: Sparkline graphs showing sentiment trends over the past 24 hours
+- **Detailed Metrics**: 
+  - Sentiment breakdown (Positive, Neutral, Negative percentages)
+  - Average sentiment scores
+  - Comment distribution visualizations
+  - Video statistics (views, likes, comments)
+
+### Dashboard Features
+- **Sorting & Filtering**: Sort videos by sentiment, views, or comment count
+- **Expandable Details**: Click on any video to see detailed analysis
+- **Auto-refresh**: Data refreshes every 5 minutes automatically
+- **Manual Refresh**: Click the refresh button for immediate updates
+- **Trend Analysis**: AI-generated insights about sentiment patterns and trends
 
 ## Technologies Used
 
-- **Python**: Core programming language
-- **YouTube Data API**: Comment fetching and data access
-- **Natural Language Processing**: Text analysis and sentiment classification
-- **Sentiment Analysis**: Machine learning models for opinion mining
-- **Data Visualization**: Charts and graphs for insights
-- **Real-time Data Processing**: Live comment analysis
+- **Python 3.8+**: Programming language
+- **Streamlit**: Web framework for dashboard
+- **NLTK (VADER)**: Natural Language Processing for sentiment analysis
+- **Google YouTube Data API v3**: For fetching video and comment data
+- **Pandas**: Data manipulation
+
+## How It Works
+
+1. **Video Fetching**: Uses YouTube Data API v3 to fetch trending videos or video details from a custom URL
+2. **Comment Retrieval**: Fetches top-level comments for each video (up to MAX_COMMENTS per video)
+3. **Sentiment Analysis**: Each comment is analyzed using NLTK VADER sentiment analyzer
+4. **Trend Calculation**: Comments are grouped by hour over the past 24 hours to create trend visualizations
+5. **Visualization**: Results are displayed in an interactive dashboard with metrics, charts, and insights
+
+## Sentiment Classification
+
+- **Positive**: Sentiment score ≥ 0.05 (🟢)
+- **Neutral**: Sentiment score between -0.05 and 0.05 (⚪)
+- **Negative**: Sentiment score ≤ -0.05 (🔴)
 
 ## Project Highlights
 
 - **API Integration**: Seamless connection with YouTube's official API
-- **NLP Pipeline**: Comprehensive text preprocessing and analysis
-- **Sentiment Models**: Advanced classification algorithms
-- **Interactive Dashboard**: User-friendly interface for analysis
-- **Scalable Architecture**: Handles large volumes of comments efficiently
+- **NLP Pipeline**: Comprehensive sentiment analysis using NLTK VADER
+- **Interactive Dashboard**: User-friendly Streamlit interface for analysis
+- **Scalable Architecture**: Handles large volumes of comments efficiently with caching and rate limiting
+- **Real-time Processing**: Live comment analysis with auto-refresh capabilities
 
 This project demonstrates expertise in API integration, natural language processing, sentiment analysis, and real-time data processing for social media analytics.
