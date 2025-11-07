@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-import { Article } from "./article";
 import { VisualCard } from "./visual-card";
 import { FeaturedCard } from "./featured-card";
 
