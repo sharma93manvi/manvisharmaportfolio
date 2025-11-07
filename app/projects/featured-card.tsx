@@ -3,6 +3,7 @@ import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { getTagColor } from "./tag-utils";
 
 type Props = {
 	project: Project;
@@ -64,24 +65,41 @@ export const FeaturedCard: React.FC<Props> = ({ project }) => {
 					<div className="pt-6 border-t border-zinc-800 group-hover:border-zinc-700 transition-colors duration-300">
 						{/* Tech Stack */}
 						<div className="flex flex-wrap gap-2 mb-4">
-							{project.title.toLowerCase().includes('youtube') && (
-								<span className="px-3 py-1.5 text-sm rounded-lg bg-red-500/20 text-red-300 border border-red-500/30">
-									YouTube API
-								</span>
+							{project.tags && project.tags.length > 0 ? (
+								project.tags.map((tag) => {
+									const colors = getTagColor(tag);
+									return (
+										<span
+											key={tag}
+											className={`px-3 py-1.5 text-sm rounded-lg ${colors.bg} ${colors.text} border ${colors.border}`}
+										>
+											{tag}
+										</span>
+									);
+								})
+							) : (
+								// Fallback to title-based detection if no tags
+								<>
+									{project.title.toLowerCase().includes('youtube') && (
+										<span className="px-3 py-1.5 text-sm rounded-lg bg-red-500/20 text-red-300 border border-red-500/30">
+											YouTube API
+										</span>
+									)}
+									{project.title.toLowerCase().includes('sentiment') && (
+										<span className="px-3 py-1.5 text-sm rounded-lg bg-pink-500/20 text-pink-300 border border-pink-500/30">
+											NLTK VADER
+										</span>
+									)}
+									{project.title.toLowerCase().includes('streamlit') && (
+										<span className="px-3 py-1.5 text-sm rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+											Streamlit
+										</span>
+									)}
+									<span className="px-3 py-1.5 text-sm rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30">
+										Python
+									</span>
+								</>
 							)}
-							{project.title.toLowerCase().includes('sentiment') && (
-								<span className="px-3 py-1.5 text-sm rounded-lg bg-pink-500/20 text-pink-300 border border-pink-500/30">
-									NLTK VADER
-								</span>
-							)}
-							{project.title.toLowerCase().includes('streamlit') && (
-								<span className="px-3 py-1.5 text-sm rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-									Streamlit
-								</span>
-							)}
-							<span className="px-3 py-1.5 text-sm rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30">
-								Python
-							</span>
 						</div>
 						
 						{/* Links */}

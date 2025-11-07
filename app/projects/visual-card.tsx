@@ -3,6 +3,7 @@ import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles, Code, BarChart3 } from "lucide-react";
+import { getTagColor } from "./tag-utils";
 
 type Props = {
 	project: Project;
@@ -80,30 +81,47 @@ export const VisualCard: React.FC<Props> = ({ project }) => {
 						<div className="pt-4 border-t border-zinc-800 group-hover:border-zinc-700 transition-colors duration-300">
 							{/* Tech Stack Preview */}
 							<div className="flex flex-wrap gap-2 mb-4">
-								{project.title.toLowerCase().includes('youtube') && (
-									<span className="px-2 py-1 text-xs rounded-md bg-red-500/20 text-red-300 border border-red-500/30">
-										YouTube API
-									</span>
-								)}
-								{project.title.toLowerCase().includes('ai') && (
-									<span className="px-2 py-1 text-xs rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30">
-										AI/ML
-									</span>
-								)}
-								{project.title.toLowerCase().includes('streamlit') && (
-									<span className="px-2 py-1 text-xs rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-										Streamlit
-									</span>
-								)}
-								{project.title.toLowerCase().includes('data') && (
-									<span className="px-2 py-1 text-xs rounded-md bg-blue-500/20 text-blue-300 border border-blue-500/30">
-										Data Science
-									</span>
-								)}
-								{project.title.toLowerCase().includes('web') && (
-									<span className="px-2 py-1 text-xs rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30">
-										Web App
-									</span>
+								{project.tags && project.tags.length > 0 ? (
+									project.tags.map((tag) => {
+										const colors = getTagColor(tag);
+										return (
+											<span
+												key={tag}
+												className={`px-2 py-1 text-xs rounded-md ${colors.bg} ${colors.text} border ${colors.border}`}
+											>
+												{tag}
+											</span>
+										);
+									})
+								) : (
+									// Fallback to title-based detection if no tags
+									<>
+										{project.title.toLowerCase().includes('youtube') && (
+											<span className="px-2 py-1 text-xs rounded-md bg-red-500/20 text-red-300 border border-red-500/30">
+												YouTube API
+											</span>
+										)}
+										{project.title.toLowerCase().includes('ai') && (
+											<span className="px-2 py-1 text-xs rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30">
+												AI/ML
+											</span>
+										)}
+										{project.title.toLowerCase().includes('streamlit') && (
+											<span className="px-2 py-1 text-xs rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+												Streamlit
+											</span>
+										)}
+										{project.title.toLowerCase().includes('data') && (
+											<span className="px-2 py-1 text-xs rounded-md bg-blue-500/20 text-blue-300 border border-blue-500/30">
+												Data Science
+											</span>
+										)}
+										{project.title.toLowerCase().includes('web') && (
+											<span className="px-2 py-1 text-xs rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30">
+												Web App
+											</span>
+										)}
+									</>
 								)}
 							</div>
 							
