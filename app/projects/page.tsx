@@ -17,9 +17,9 @@ import { FeaturedCard } from "./featured-card";
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const featured = allProjects.find((project) => project.slug === "youtube-sentiment-analysis");
-  const top2 = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence");
-  const top3 = allProjects.find((project) => project.slug === "photo-caption-ai");
+  const featured = allProjects.find((project) => project.slug === "meeting-agent");
+  const top2 = allProjects.find((project) => project.slug === "youtube-sentiment-analysis");
+  const top3 = allProjects.find((project) => project.slug === "vancouver-airbnb-investment-intelligence");
   
   // Filter projects based on selected category
   const getFilteredProjects = () => {

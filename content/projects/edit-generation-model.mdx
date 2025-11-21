@@ -1,0 +1,67 @@
+---
+title: Edit Generation Model (EGM)
+description: A deep learning-based image editing tool that learns user editing preferences from raw/edited image pairs and automatically applies those preferences to new images using Pix2Pix (conditional GAN) architecture.
+date: "2024-11-16"
+published: true
+repository: sharma93manvi/EditGenerationModel
+tags:
+  - Python
+  - Deep Learning
+  - GAN
+  - Pix2Pix
+  - PyTorch
+  - Computer Vision
+  - Image Processing
+  - Neural Networks
+---
+
+A deep learning-based image editing tool that learns user editing preferences from raw/edited image pairs and automatically applies those preferences to new images using Pix2Pix (conditional GAN) architecture.
+
+## Key Features
+
+- **Automatic Style Learning**: Trains on your raw/edited image pairs to learn your editing preferences
+- **Pattern-Based Matching**: Automatically matches raw and edited images using prefix/suffix patterns
+- **GPU Acceleration**: Supports MPS (Apple Silicon), CUDA (NVIDIA), and CPU
+- **Flexible Input Formats**: Supports various image formats for raw images (JPG, PNG, TIFF, RAW, etc.)
+- **Standardized Output**: Generates edited images in JPG or PNG format
+
+## Technologies Used
+
+- **Python**: Core programming language
+- **PyTorch**: Deep learning framework
+- **Pix2Pix**: Conditional GAN architecture for image-to-image translation
+- **U-Net Generator**: Encoder-decoder structure with skip connections
+- **PatchGAN Discriminator**: Classifies 70x70 image patches
+- **Computer Vision**: Image processing and transformation
+
+## Model Architecture
+
+The model uses a **Pix2Pix** architecture:
+
+- **Generator**: U-Net with encoder-decoder structure and skip connections
+- **Discriminator**: PatchGAN that classifies 70x70 image patches
+- **Loss Function**: Combination of L1 loss (pixel-wise) and adversarial loss
+
+## Project Highlights
+
+- **Style Transfer**: Learns individual editing styles from training data
+- **Automatic Pairing**: Intelligent pattern matching for raw/edited image pairs
+- **Cross-Platform GPU Support**: Works with Apple Silicon (MPS), NVIDIA (CUDA), and CPU
+- **Flexible Training**: Configurable epochs, batch size, learning rate, and image size
+- **Production Ready**: Complete training and inference pipeline
+
+## Usage Workflow
+
+1. **Prepare Training Data**: Place raw/edited image pairs in structured directories
+2. **Train Model**: Train on image pairs to learn editing style
+3. **Run Inference**: Apply learned style to new raw images automatically
+
+## Technical Details
+
+- **Image Pair Matching**: Supports prefix, suffix, and exact match patterns
+- **Training Options**: Configurable epochs, batch size, learning rate, L1 loss weight
+- **Memory Efficient**: Supports batch processing and variable image sizes
+- **Checkpoint System**: Saves model checkpoints at regular intervals
+
+This project demonstrates expertise in deep learning, computer vision, generative adversarial networks (GANs), and building production-ready machine learning pipelines for image processing applications.
+

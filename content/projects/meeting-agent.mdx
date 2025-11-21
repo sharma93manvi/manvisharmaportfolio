@@ -1,0 +1,58 @@
+---
+title: Meeting Agent
+description: A Chrome Extension that listens to your meetings, transcribes them in real-time, and generates summaries with follow-up tasks. Built with Chrome Extension Manifest V3, Python FastAPI backend, and Web Speech API.
+date: "2024-12-01"
+published: true
+repository: sharma93manvi/meeting-agent
+tags:
+  - Chrome Extension
+  - Python
+  - FastAPI
+  - AI/ML
+  - Web Speech API
+  - Real-time Transcription
+  - AI Summarization
+  - JavaScript
+---
+
+A Chrome Extension that listens to your meetings, transcribes them in real-time, and generates summaries with follow-up tasks. Built with Chrome Extension Manifest V3, Python FastAPI backend, and Web Speech API.
+
+## Key Features
+
+- **Real-time Transcription**: Captures audio from active browser tabs and transcribes meetings in real-time using Web Speech API
+- **AI-Powered Summarization**: Generates intelligent summaries of meeting content with key points and insights
+- **Task Detection**: Automatically identifies and extracts follow-up tasks from meeting transcripts
+- **Meeting History**: Stores meeting transcripts and summaries locally using Chrome storage
+- **Audio Capture**: Uses `chrome.tabCapture` API to capture audio streams directly from browser tabs
+- **Offscreen Document**: Implements offscreen document for continuous speech recognition
+
+## Technologies Used
+
+- **Chrome Extension (Manifest V3)**: Latest web extension standard for security and performance
+- **Python FastAPI**: Backend server handling business logic, AI processing, and summarization
+- **Web Speech API**: Built-in browser API for real-time speech-to-text transcription
+- **JavaScript**: Vanilla JS for extension functionality
+- **Chrome APIs**: 
+  - `chrome.tabCapture` for audio capture
+  - `chrome.storage.local` for local data persistence
+- **HTML/CSS**: Lightweight UI implementation with modern CSS variables
+
+## Project Highlights
+
+- **Real-time Processing**: Continuous audio capture and transcription during meetings
+- **AI Summarization**: Dynamic processing in Python backend for intelligent meeting summaries
+- **Task Extraction**: Automatically identifies actionable items from meeting transcripts
+- **Privacy-First**: Local storage and processing with optional cloud summarization
+- **Cross-Platform**: Works with any web-based meeting platform (Zoom, Google Meet, Teams, etc.)
+- **User-Friendly Dashboard**: Clean interface for viewing meeting history and summaries
+
+## Implementation Details
+
+- **Manifest V3**: Uses the latest Chrome Extension standard
+- **Background Scripts**: Handles audio capture and extension lifecycle
+- **Offscreen Document**: Enables continuous speech recognition
+- **FastAPI Backend**: Python server for AI-powered summarization
+- **Local Storage**: Chrome storage API for meeting history persistence
+
+This project demonstrates expertise in browser extension development, real-time audio processing, AI integration, and building productivity tools that enhance meeting workflows.
+

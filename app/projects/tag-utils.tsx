@@ -12,6 +12,26 @@ export const getTagColor = (tag: string): { bg: string; text: string; border: st
 		return { bg: 'bg-purple-500/20', text: 'text-purple-300', border: 'border-purple-500/30' };
 	}
 	
+	// Deep Learning tags
+	if (tagLower.includes('deep learning') || tagLower.includes('gan') || tagLower.includes('pix2pix') || tagLower.includes('pytorch') || tagLower.includes('tensorflow') || tagLower.includes('neural network') || tagLower.includes('cnn') || tagLower.includes('rnn')) {
+		return { bg: 'bg-violet-500/20', text: 'text-violet-300', border: 'border-violet-500/30' };
+	}
+	
+	// Computer Vision tags
+	if (tagLower.includes('computer vision') || tagLower.includes('image processing') || tagLower.includes('opencv') || tagLower.includes('image')) {
+		return { bg: 'bg-rose-500/20', text: 'text-rose-300', border: 'border-rose-500/30' };
+	}
+	
+	// Chrome Extension/Browser Extension tags
+	if (tagLower.includes('chrome') || tagLower.includes('extension') || tagLower.includes('browser')) {
+		return { bg: 'bg-orange-500/20', text: 'text-orange-300', border: 'border-orange-500/30' };
+	}
+	
+	// Backend/Framework tags
+	if (tagLower.includes('flask') || tagLower.includes('django') || tagLower.includes('fastapi')) {
+		return { bg: 'bg-green-500/20', text: 'text-green-300', border: 'border-green-500/30' };
+	}
+	
 	// Data Science tags
 	if (tagLower.includes('data') || tagLower.includes('pandas') || tagLower.includes('numpy') || tagLower.includes('analytics')) {
 		return { bg: 'bg-blue-500/20', text: 'text-blue-300', border: 'border-blue-500/30' };
@@ -35,6 +55,11 @@ export const getTagColor = (tag: string): { bg: string; text: string; border: st
 	// Python tags
 	if (tagLower.includes('python')) {
 		return { bg: 'bg-blue-500/20', text: 'text-blue-300', border: 'border-blue-500/30' };
+	}
+	
+	// Automation/Productivity tags
+	if (tagLower.includes('automation') || tagLower.includes('transcription') || tagLower.includes('real-time') || tagLower.includes('speech')) {
+		return { bg: 'bg-pink-500/20', text: 'text-pink-300', border: 'border-pink-500/30' };
 	}
 	
 	// Machine Learning specific

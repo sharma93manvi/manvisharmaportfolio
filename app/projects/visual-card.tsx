@@ -13,6 +13,12 @@ type Props = {
 const getProjectGradient = (project: Project): string => {
 	const title = project.title.toLowerCase();
 	
+	if (title.includes('meeting') || title.includes('agent') || title.includes('chrome')) {
+		return 'from-orange-500/20 via-pink-500/20 to-purple-500/20';
+	}
+	if (title.includes('edit') || title.includes('generation') || title.includes('egm') || title.includes('pix2pix') || title.includes('gan')) {
+		return 'from-violet-500/20 via-purple-500/20 to-rose-500/20';
+	}
 	if (title.includes('youtube') || title.includes('sentiment') || title.includes('analysis')) {
 		return 'from-red-500/20 via-pink-500/20 to-rose-500/20';
 	}
@@ -35,6 +41,7 @@ const getProjectGradient = (project: Project): string => {
 // Get icon based on project type
 const getProjectIcon = (project: Project) => {
 	const title = project.title.toLowerCase();
+	if (title.includes('meeting') || title.includes('agent')) return Code;
 	if (title.includes('ai') || title.includes('ml')) return Sparkles;
 	if (title.includes('analytics') || title.includes('data')) return BarChart3;
 	if (title.includes('web') || title.includes('generator')) return Code;

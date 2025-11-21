@@ -11,6 +11,9 @@ type Props = {
 
 const getFeaturedGradient = (project: Project): string => {
 	const title = project.title.toLowerCase();
+	if (title.includes('meeting') || title.includes('agent') || title.includes('chrome')) {
+		return 'from-orange-500/30 via-pink-500/30 to-purple-500/30';
+	}
 	if (title.includes('youtube') || title.includes('sentiment')) {
 		return 'from-red-500/30 via-pink-500/30 to-rose-500/30';
 	}
