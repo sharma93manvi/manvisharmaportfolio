@@ -1,18 +1,29 @@
 "use client";
-import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles, Code, BarChart3 } from "lucide-react";
 import { getTagColor } from "./tag-utils";
 
+type ProjectData = {
+	slug: string;
+	title: string;
+	description: string;
+	tags?: string[];
+	url?: string;
+	repository?: string;
+};
+
 type Props = {
-	project: Project;
+	project: ProjectData;
 };
 
 // Get gradient colors based on project type
-const getProjectGradient = (project: Project): string => {
+const getProjectGradient = (project: ProjectData): string => {
 	const title = project.title.toLowerCase();
 	
+	if (title.includes('brain') || title.includes('tumor') || title.includes('medical') || title.includes('mri')) {
+		return 'from-blue-500/20 via-indigo-500/20 to-purple-500/20';
+	}
 	if (title.includes('meeting') || title.includes('agent') || title.includes('chrome')) {
 		return 'from-orange-500/20 via-pink-500/20 to-purple-500/20';
 	}
@@ -39,7 +50,7 @@ const getProjectGradient = (project: Project): string => {
 };
 
 // Get icon based on project type
-const getProjectIcon = (project: Project) => {
+const getProjectIcon = (project: ProjectData) => {
 	const title = project.title.toLowerCase();
 	if (title.includes('meeting') || title.includes('agent')) return Code;
 	if (title.includes('ai') || title.includes('ml')) return Sparkles;
@@ -57,7 +68,7 @@ export const VisualCard: React.FC<Props> = ({ project }) => {
 			<motion.div
 				className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all duration-300 hover:border-zinc-600 hover:shadow-2xl hover:shadow-zinc-900/50"
 				whileHover={{ y: -4 }}
-				initial={{ opacity: 0, y: 20 }}
+				initial={false}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.3 }}
 			>

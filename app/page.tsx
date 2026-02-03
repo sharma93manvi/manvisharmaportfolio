@@ -1,6 +1,12 @@
+"use client";
 import Link from "next/link";
-import React from "react";
-import Particles from "./components/particles";
+import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamically import Particles to avoid SSR issues
+const Particles = dynamic(() => import("./components/particles"), {
+  ssr: false,
+});
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -14,29 +20,31 @@ export default function Home() {
       <div className="absolute inset-0 bg-grid-pattern opacity-5 animate-grid-move pointer-events-none"></div>
       
       <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center justify-center gap-4">
-          <Link
-            key="/about"
-            href="/about"
-            className="text-base md:text-lg duration-500 text-zinc-500 hover:text-zinc-300"
-          >
-            About Me
-          </Link>
-          {navigation.map((item) => (
+        <ul className="flex items-center justify-center gap-6 md:gap-8" style={{ gap: '1.5rem' }}>
+          <li>
             <Link
-              key={item.href}
-              href={item.href}
-              className="text-base md:text-lg duration-500 text-zinc-500 hover:text-zinc-300"
+              href="/about"
+              className="text-base md:text-lg duration-500 text-zinc-500 hover:text-zinc-300 whitespace-nowrap"
             >
-              {item.name}
+              About Me
             </Link>
+          </li>
+          {navigation.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-base md:text-lg duration-500 text-zinc-500 hover:text-zinc-300 whitespace-nowrap"
+              >
+                {item.name}
+              </Link>
+            </li>
           ))}
         </ul>
       </nav>
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
+        quantity={50}
       />
       <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
         Manvi Sharma
@@ -50,5 +58,4 @@ export default function Home() {
       </div>
     </div>
   );
-
 }

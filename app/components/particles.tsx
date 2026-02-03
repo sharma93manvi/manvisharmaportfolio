@@ -18,6 +18,7 @@ export default function Particles({
 	ease = 50,
 	refresh = false,
 }: ParticlesProps) {
+	const [mounted, setMounted] = useState(false);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const canvasContainerRef = useRef<HTMLDivElement>(null);
 	const context = useRef<CanvasRenderingContext2D | null>(null);
@@ -25,28 +26,12 @@ export default function Particles({
 	const mousePosition = useMousePosition();
 	const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 	const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+	const animationFrameId = useRef<number | null>(null);
 	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 
 	useEffect(() => {
-		if (canvasRef.current) {
-			context.current = canvasRef.current.getContext("2d");
-		}
-		initCanvas();
-		animate();
-		window.addEventListener("resize", initCanvas);
-
-		return () => {
-			window.removeEventListener("resize", initCanvas);
-		};
+		setMounted(true);
 	}, []);
-
-	useEffect(() => {
-		onMouseMove();
-	}, [mousePosition.x, mousePosition.y]);
-
-	useEffect(() => {
-		initCanvas();
-	}, [refresh]);
 
 	const initCanvas = () => {
 		resizeCanvas();
@@ -167,6 +152,11 @@ export default function Particles({
 	};
 
 	const animate = () => {
+		if (typeof window === "undefined" || !context.current) {
+			animationFrameId.current = null;
+			return;
+		}
+		
 		clearContext();
 		circles.current.forEach((circle: Circle, i: number) => {
 			// Handle the alpha value
@@ -223,8 +213,85 @@ export default function Particles({
 				);
 			}
 		});
-		window.requestAnimationFrame(animate);
+		animationFrameId.current = window.requestAnimationFrame(animate);
 	};
+
+	// Initialize canvas after mount
+	useEffect(() => {
+		if (!mounted || typeof window === "undefined") return;
+		if (!canvasRef.current || !canvasContainerRef.current) return;
+		
+		const canvas = canvasRef.current;
+		const container = canvasContainerRef.current;
+		
+		if (canvas) {
+			const ctx = canvas.getContext("2d");
+			if (!ctx) return;
+			context.current = ctx;
+		}
+		
+		// Small delay to ensure DOM is ready
+		const timeoutId = setTimeout(() => {
+			if (container && canvas && context.current) {
+				try {
+					resizeCanvas();
+					drawParticles();
+					animate();
+				} catch (error) {
+					console.error("Error initializing particles:", error);
+				}
+			}
+		}, 100);
+		
+		const handleResize = () => {
+			if (container && canvas && context.current) {
+				try {
+					resizeCanvas();
+					drawParticles();
+				} catch (error) {
+					console.error("Error resizing particles:", error);
+				}
+			}
+		};
+		
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			clearTimeout(timeoutId);
+			window.removeEventListener("resize", handleResize);
+			if (animationFrameId.current !== null) {
+				window.cancelAnimationFrame(animationFrameId.current);
+				animationFrameId.current = null;
+			}
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [mounted]);
+
+	// Handle mouse movement
+	useEffect(() => {
+		if (!mounted || !canvasRef.current) return;
+		const rect = canvasRef.current.getBoundingClientRect();
+		const { w, h } = canvasSize.current;
+		const x = mousePosition.x - rect.left - w / 2;
+		const y = mousePosition.y - rect.top - h / 2;
+		const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+		if (inside) {
+			mouse.current.x = x;
+			mouse.current.y = y;
+		}
+	}, [mousePosition.x, mousePosition.y, mounted]);
+
+	// Handle refresh prop
+	useEffect(() => {
+		if (!mounted || !canvasContainerRef.current || !canvasRef.current || !context.current) return;
+		try {
+			resizeCanvas();
+			drawParticles();
+		} catch (error) {
+			console.error("Error refreshing particles:", error);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [refresh, mounted]);
 
 	return (
 		<div className={className} ref={canvasContainerRef} aria-hidden="true">

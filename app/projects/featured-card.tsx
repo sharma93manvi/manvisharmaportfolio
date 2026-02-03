@@ -1,16 +1,27 @@
 "use client";
-import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles } from "lucide-react";
 import { getTagColor } from "./tag-utils";
 
-type Props = {
-	project: Project;
+type ProjectData = {
+	slug: string;
+	title: string;
+	description: string;
+	tags?: string[];
+	url?: string;
+	repository?: string;
 };
 
-const getFeaturedGradient = (project: Project): string => {
+type Props = {
+	project: ProjectData;
+};
+
+const getFeaturedGradient = (project: ProjectData): string => {
 	const title = project.title.toLowerCase();
+	if (title.includes('brain') || title.includes('tumor') || title.includes('medical') || title.includes('mri')) {
+		return 'from-blue-500/30 via-indigo-500/30 to-purple-500/30';
+	}
 	if (title.includes('meeting') || title.includes('agent') || title.includes('chrome')) {
 		return 'from-orange-500/30 via-pink-500/30 to-purple-500/30';
 	}
@@ -31,7 +42,7 @@ export const FeaturedCard: React.FC<Props> = ({ project }) => {
 			<motion.div
 				className="group relative overflow-hidden rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90 backdrop-blur-sm transition-all duration-500 hover:border-zinc-500 hover:shadow-2xl hover:shadow-zinc-900/50"
 				whileHover={{ y: -6, scale: 1.02 }}
-				initial={{ opacity: 0, y: 20 }}
+				initial={false}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.4 }}
 			>

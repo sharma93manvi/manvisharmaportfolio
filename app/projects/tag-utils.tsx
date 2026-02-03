@@ -22,6 +22,16 @@ export const getTagColor = (tag: string): { bg: string; text: string; border: st
 		return { bg: 'bg-rose-500/20', text: 'text-rose-300', border: 'border-rose-500/30' };
 	}
 	
+	// Medical Imaging tags
+	if (tagLower.includes('medical') || tagLower.includes('mri') || tagLower.includes('healthcare') || tagLower.includes('clinical')) {
+		return { bg: 'bg-blue-500/20', text: 'text-blue-300', border: 'border-blue-500/30' };
+	}
+	
+	// Model Architecture tags
+	if (tagLower.includes('resnet') || tagLower.includes('efficientnet') || tagLower.includes('transfer learning')) {
+		return { bg: 'bg-indigo-500/20', text: 'text-indigo-300', border: 'border-indigo-500/30' };
+	}
+	
 	// Chrome Extension/Browser Extension tags
 	if (tagLower.includes('chrome') || tagLower.includes('extension') || tagLower.includes('browser')) {
 		return { bg: 'bg-orange-500/20', text: 'text-orange-300', border: 'border-orange-500/30' };
